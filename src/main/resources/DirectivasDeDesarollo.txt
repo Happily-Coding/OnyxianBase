@@ -1,0 +1,11 @@
+Object Oriented: Si se tienen que acoplar cosas se hará mediante objetos.
+Uncoupled: 
+    Los objetos seran lo mas chicos posibles. (Ej en vez de un conjunto de listas, una lista de objetos que sean conjutnos de información)
+Exception Errors: Los casos no esperados se manejaran con excepciones
+Fail fast: Las excepciones se manejaran lo antes posible, aunque sea tirandolas para arriba.
+Informative Excepctions: Las exceptions se tiraran para arriba todo lo que sea necesario para obtener la información util
+Configuration Interface (para leer cada tipo de objeto) + Configuration Util (para los loops etc)
+
+El metodo para leer de la config tiene que estar en un configuration util o configuration class. Esto es asi porque no se puede hacer un metodo no estatico que permita leer de la config y ademas seria acoplar la lectura a la clase del objeto, cuando
+en relaidad es independiente.
+Posiblemente configuration deberia estar separado de configUtils para no sobrecargar la clase?

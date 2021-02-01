@@ -1,0 +1,2 @@
+Para crear la wiki ir al proyecto, tocar la ruedita, activar wiki, cambiarla a master branch (opcionalmente) o sino agregarle el pom a la otra branch
+crear el index.html. Crear el header y footer, Crear el css y linkearlo. Crear las wiki pages.

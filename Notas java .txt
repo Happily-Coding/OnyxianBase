@@ -1,0 +1,79 @@
+Interfaces:
+//Una interface puede extender cuantas interfaces quiera, y obtiene sus metodos
+
+//Default methods no necesitan ser implementados en los hijos
+//static interface metohds no pueden ser implementados en lso hijos
+//Todos loso otros metodos son publicos y abstractos
+
+Exceptions:
+https://www.youtube.com/watch?v=44jQf3MelPI
+
+TIPS:
+    Siempre que catcheo y rethroweo, añadir la exception que catchie como causa(mediante constructor)
+
+Generics:
+----------------
+
+Clases genericas:
+Las clases pueden ser genericas, es decir tener parametros de tipo que se encuentran dentro del <> al lado del nobmre de la clase.
+    EJ: class MyGenerical<T>{...}
+
+Los parametros de tipo de la clase se deben escribir al lado de su nombre a la hora de declararla y instanciarla.
+    EJ MyGenerical<String> testGenerical = new MyGenerical<String>();
+
+El diamante de la creación se puede dejar vacio y se asumira que es el mismo de la declaración.
+    EJ MyGenerical<String> testGenerical = new MyGenerical<>();
+
+El diamante de la declaración puede obviarse y se asumira que es object.
+    EJ MyGenerical testGenerical = new MyGenerical<>();
+
+El compilador/IDE asumira que todos las veces que se mencione esa letra en la clase esta usando ese tipo, ej:
+    *Un campo, ej : private T example;
+    *El reutrn type de un metodo, ej : public T getExample(){}
+    *El parametro de un metodo, ej : public void setExample(T example){}
+NO hace falta aclarar en el diamante de nada mas, con solo la letra lo entenderá
+
+
+Metodos genericos:
+Los metodos tambien pueden ser genericos (sin necesidad de estar en una clase generica). Para esto hay que darle alguna parametro de tipo dentro del diamante, que debe ir despues del scope y antes del tipo que devuelve.
+    EJ: public <T> void testy(){}
+A la hora de llamarlos se puede indicar el tipo en un diamante antes de su nombre. 
+    EJ: this.<String>testy();
+O se puede llamar directamente ya que el compilador deduce que tipo es necesario para el parametro.
+    EJ: this.testy();
+
+
+Bounds:
+A las letras donde se menciona el tipo generico de un metodo o clase se le puede agregar extends, y la clase que debe extender/implementar.
+    EJ: class MyGenerical<T extends String>{}
+Esto hace que todas los posibles valores de T sean solo aquellos de objetos cuya clase extienda a string.
+También lo puedo hacer con ? extends y la clase que deben extender('tipos wildcard'):
+    EJ: class MyGenerical<? extends String>{}
+        
+
+ej:
+class MyGenerical<T>{
+    public T getExample(){}
+}
+MyGenerical<String> myGenericalInstance = new MyGenerical<String>();
+String example= myGenericalInstance.getExample(); // -> no habra error
+Int example = myGenericalInstnace.getExample(); // --> si habrá error.
+
+
+
+
+
+
+
+
+Los genericos son parametros que se encuentran entre <> .
+
+Una clase puede tener genericos al lado del nombre, esto indica que durante la creación de sus
+objectos se puede parametrizar.
+
+*Los metodos genericos son aquellos que lidian con 1 o mas genericos.
+*Los genericos con los que lidian se encuentran aclarados en el diamante.
+*Ademas, como todos los metodos tienen un return type, un nombre y un grupo de parametros
+
+public <T> String test(){
+}
