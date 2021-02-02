@@ -1,3 +1,8 @@
+Cada plugin premium tiene que extender OnyxianPlugin & OnyxianCoreAPI exclusivamente. Ademas tiene que depender en el plugin.yml del OnyxianCore
+  Adicionalmente, si tienen alguna feature que dependa de un plugin especifico (ej poner custom blocks depende de blocky), tendran como dependency solo su API. + la declaraci�no de depend en plugin.yml
+
+Cualquier plugin que quiera interactuar con mis plugins puede poner como dependencia el onyxiancoreapi, o la api especifica de ese plugin (exclusivamente).
+
 Object Oriented: Si se tienen que acoplar cosas se hará mediante objetos.
 Uncoupled: 
     Los objetos seran lo mas chicos posibles. (Ej en vez de un conjunto de listas, una lista de objetos que sean conjutnos de información)
