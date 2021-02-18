@@ -1,7 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.github.OnyxianSoul</groupId>
+    <groupId>com.github.onyxiansoul</groupId>
+    <artifactId>DamagePotionEffects</artifactId>
+    <name>${project.artifactId}</name>
+    <version>1.0.1</version>
+    <packaging>jar</packaging>
+    <url>https://www.spigotmc.org/threads/damagepotioneffects.487133/</url> <!--TODO: Update to resource thread.-->
+    <description>Apply potion effects on damage</description>
+    <developers>
+      <developer>
+        <name>OnyxianSoul</name>
+        <email>onyxiansoul@gmail.com</email>
+        <url>https://www.spigotmc.org/resources/authors/onyxiansoul.667504/</url>
+      </developer>
+    </developers>
+    
+    <repositories>
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+        <!-- bStats -->
+        <repository>
+            <id>CodeMC</id>
+            <url>https://repo.codemc.org/repository/maven-public</url>
+         </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.jetbrains/annotations -->
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>16.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.16.4-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>30.1-jre</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <!-- https://bstats.org/getting-started/include-metrics -->
+        <dependency>
+          <groupId>org.bstats</groupId>
+          <artifactId>bstats-bukkit</artifactId>
+          <version>1.7</version>
+          <scope>compile</scope>
+        </dependency>
+    </dependencies>
+    
+
+    
+
+</project>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.onyxiansoul</groupId>
     <artifactId>OnyxianBase</artifactId>
     <name>OnyxianBase</name>
     <description>The parent maven project for my plugins to setup common dependancies</description>

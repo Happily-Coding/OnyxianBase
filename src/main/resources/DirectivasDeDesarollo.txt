@@ -1,5 +1,19 @@
+Todos los plugins premium tendran como parent onyxian base
+El core va a depender de onyxian base. El core va a tener todo lo que sea codigo colaborativo (registries mostly). El core va a ser bajado y sera un plugin independiente.
+Todos los plugins premium dependeran tanto de OnyxianPlugin como de OnyxianCoreAPI, nada mas.
+Onyxian base estara shadeado en todos los plugins.
+
+
+
+
+
+
+
+
+
+
 Cada plugin premium tiene que extender OnyxianPlugin & OnyxianCoreAPI exclusivamente. Ademas tiene que depender en el plugin.yml del OnyxianCore
-  Adicionalmente, si tienen alguna feature que dependa de un plugin especifico (ej poner custom blocks depende de blocky), tendran como dependency solo su API. + la declaraci´no de depend en plugin.yml
+  Adicionalmente, si tienen alguna feature que dependa de un plugin especifico (ej poner custom blocks depende de blocky), tendran como dependency solo su API. + la declaraciï¿½no de depend en plugin.yml
 
 Cualquier plugin que quiera interactuar con mis plugins puede poner como dependencia el onyxiancoreapi, o la api especifica de ese plugin (exclusivamente).
 

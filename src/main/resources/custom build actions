@@ -1,0 +1,15 @@
+Se pueden crear nuevas actions asi (nbactions.xml)
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-Install OnyxianCore</actionName>
+            <displayName>Install OnyxianCore</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>package</goal>
+                <goal>verify</goal>
+            </goals>
+        </action>
+</actions>
+
+Se pueden overridear las viejas asiendo click derecho en el projecto y llendo a la acción
