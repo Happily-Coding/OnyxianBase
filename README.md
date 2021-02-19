@@ -1,3 +1,3 @@
-# OnyxianSoul Plugins
+# OnyxianBase
 
-This repository holds my closed source plugins & plugin modifications.
+The base maven project used in the OnyxianCore + All my Premium Plugins.
