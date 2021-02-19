@@ -8,11 +8,11 @@
     <version>1.0.0</version>
     <packaging>pom</packaging>
     
-        <properties>
-        <!--Avoid maven warnings caused by dynamic build enviroments-->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+    <properties>
+      <!--Avoid maven warnings caused by dynamic build enviroments-->
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <maven.compiler.source>1.8</maven.compiler.source>
+      <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
     
     <repositories>
@@ -29,44 +29,44 @@
     </repositories>
     
     <!--Spigot. También aporta commons-lang, guava, gson bungeecordchat, y snakeyaml -->
-    <!-- Recordar, simple ir a la library y download sources + download javadocs baja todo -->
+    <!-- Reminder, go to library, download sources + download javadocs to get the source/libs aswell -->
     <dependencies>
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.16.5-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.jetbrains/annotations -->
-        <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-            <version>16.0.1</version>
-        </dependency>
-        <!--TODO SHADEAR AMBAS ANNOTATIONS--> 
-        <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
-        <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-            <version>2.0.1.Final</version>
-        </dependency>
-          <!-- https://bstats.org/getting-started/include-metrics -->
-        <dependency>
-          <groupId>org.bstats</groupId>
-          <artifactId>bstats-bukkit</artifactId>
-          <version>1.7</version>
-          <scope>compile</scope>
-        </dependency>
+      <dependency>
+          <groupId>org.spigotmc</groupId>
+          <artifactId>spigot-api</artifactId>
+          <version>1.16.5-R0.1-SNAPSHOT</version>
+          <scope>provided</scope>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/org.jetbrains/annotations -->
+      <dependency>
+          <groupId>org.jetbrains</groupId>
+          <artifactId>annotations</artifactId>
+          <version>16.0.1</version>
+      </dependency>
+      <!--TODO RELOCATE/EXCLUDE ANNOTATIONS FROM BLOB--> 
+      <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+      <dependency>
+          <groupId>javax.validation</groupId>
+          <artifactId>validation-api</artifactId>
+          <version>2.0.1.Final</version>
+      </dependency>
+        <!-- https://bstats.org/getting-started/include-metrics -->
+      <dependency>
+        <groupId>org.bstats</groupId>
+        <artifactId>bstats-bukkit</artifactId>
+        <version>1.7</version>
+        <scope>compile</scope>
+      </dependency>
     </dependencies>
     
     <build>
-        <!-- Allow the usage of maven placeholders, such as ${project.version} in all the resources (plugin.yml, config.yml, etc)  -->
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory> 
-                <filtering>true</filtering>
-             </resource>
-        </resources>
+      <!-- Allow the usage of maven placeholders, such as ${project.version} in all the resources (plugin.yml, config.yml, etc)  -->
+      <resources>
+          <resource>
+              <directory>src/main/resources</directory> 
+              <filtering>true</filtering>
+           </resource>
+      </resources>
         
       <!--Create ${artifactId.lowercase} placeholder-->  
       <plugins>
@@ -106,7 +106,7 @@
                 <filter>
                 <artifact>*:*</artifact>
                 <excludes>
-                    <exclude>META-INF/**</exclude>
+                  <exclude>META-INF/**</exclude>
                 </excludes>
                 </filter>
             </filters>
@@ -126,13 +126,13 @@
                 <goal>shade</goal>
               </goals>
               <configuration>
-                    <!--Prevent an unnecesairy step during the compilation-->
-                  <createDependencyReducedPom>false</createDependencyReducedPom>
-                  <!---Make the name be just the plugin name-->
-                  <finalName>${project.artifactId}</finalName>
-                  <!---Make the output directory be our test directory. ../ just means parent folder. In my case this is the relative path that points to my test server-->
-                  <!---<outputDirectory>../../Minecraft/Development Server/plugins</outputDirectory>-->
-                  <!---<outputFile>../../../Minecraft/Development Server/plugins/${project.artifactId}.jar</outputFile>-->
+                <!--Prevent an unnecesairy step during the compilation-->
+                <createDependencyReducedPom>false</createDependencyReducedPom>
+                <!---Make the name be just the plugin name-->
+                <finalName>${project.artifactId}</finalName>
+                <!---Make the output directory be our test directory. ../ just means parent folder. In my case this is the relative path that points to my test server-->
+                <!---<outputDirectory>../../Minecraft/Development Server/plugins</outputDirectory>-->
+                <!---<outputFile>../../../Minecraft/Development Server/plugins/${project.artifactId}.jar</outputFile>-->
               </configuration>
             </execution>
           </executions>
